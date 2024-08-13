@@ -3,13 +3,13 @@ const { parseRuleString, combineNodes, evaluate, printTree } = require('../utils
 
 
 /**
- * Generates a random string of specified length using uppercase and lowercase letters.
+ * Generates a random string of specified length using number from 0 to 9.
  * Uses Math.random() for character selection.
  * @param {number} length - The desired length of the random string
- * @return {string} A random string of letters
+ * @return {string} A random string of numbers
  */
-function generateRandomLetterString(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+function generateRandomNumberString(length) {
+  const characters = '0123456789';
   const charactersLength = characters.length;
   let result = '';
 
@@ -63,7 +63,7 @@ combineRules = async (req, res) => {
     }
     const ruleASTs = ruleDocs.map(rule => rule.ruleAST);
     const combinedRootNode = combineNodes(ruleASTs, op);
-    const randomString = generateRandomLetterString(4);
+    const randomString = generateRandomNumberString(3);
     const rule = new Rule({ ruleName: `combined${randomString}`, ruleAST: combinedRootNode });
     await rule.save();
     printTree(combinedRootNode);

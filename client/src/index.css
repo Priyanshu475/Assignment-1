@@ -1,13 +1,288 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* App.css */
+:root {
+  --primary-color: #6200ee;
+  --secondary-color: #03dac6;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --on-surface-color: #ffffff;
+  --error-color: #cf6679;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--on-surface-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+form {
+  background-color: var(--surface-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--on-surface-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7c4dff;
+}
+
+pre {
+  background-color: var(--surface-color);
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  border: 1px solid var(--primary-color);
+}
+
+.rule-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  textarea,
+  select,
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  textarea,
+  select,
+  button {
+    font-size: 0.8rem;
+  }
+
+  pre {
+    font-size: 0.8rem;
+  }
+}
+/* App.css */
+/* ... (keep the previous CSS rules) ... */
+
+.components-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.component {
+  flex: 1;
+  min-width: 300px;
+  max-width: calc(33.333% - 20px);
+  background-color: var(--surface-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .component {
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .component {
+    max-width: 100%;
+  }
+}
+
+/* Adjust other styles for better fit in side-by-side layout */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+form {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+pre {
+  margin-top: 15px;
+}
+/* App.css */
+/* ... (keep the previous CSS rules) ... */
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.components-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.component {
+  background-color: var(--surface-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .components-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .components-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Adjust other styles for better fit in equal-size layout */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+form {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+form > div:last-child {
+  flex-grow: 1;
+}
+
+button {
+  margin-top: auto;
+}
+
+pre {
+  margin-top: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rule-container {
+  margin-bottom: 10px;
 }
