@@ -64,7 +64,7 @@ combineRules = async (req, res) => {
     const ruleASTs = ruleDocs.map(rule => rule.ruleAST);
     const combinedRootNode = combineNodes(ruleASTs, op);
     const randomString = generateRandomNumberString(3);
-    const rule = new Rule({ ruleName: `combined${randomString}`, ruleAST: combinedRootNode });
+    const rule = new Rule({ ruleName: `combined-${randomString}`, ruleAST: combinedRootNode });
     await rule.save();
     printTree(combinedRootNode);
     res.status(201).json(rule);
