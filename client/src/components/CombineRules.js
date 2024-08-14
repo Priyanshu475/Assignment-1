@@ -26,7 +26,7 @@ function CombineRules() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/rules/combine_rules', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/rules/combine_rules`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
