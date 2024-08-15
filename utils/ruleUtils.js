@@ -6,7 +6,7 @@
  * @return {Object} The root node of the AST
  */
 function parseRuleString(ruleString) {
-  const tokens = ruleString.match(/(\(|\)|AND|OR|<=|>=|!=|<|>|=|[^()\s]+)/g);
+  const tokens = ruleString.match(/(\(|\)|AND|OR|and|or|<=|>=|!=|<|>|=|[^()\s]+)/g);
   const stack = [];
   const operators = [];
 
@@ -21,11 +21,11 @@ function parseRuleString(ruleString) {
     const token = tokens[i].trim();
     if (token === ' ') continue;
 
-    if (token === 'AND' || token === 'OR') {
+    if (token.toUpperCase() === 'AND' || token.toUpperCase() === 'OR') {
       while (operators.length && operators[operators.length - 1] !== '(') {
         popOperator();
       }
-      operators.push(token);
+      operators.push(token.toUpperCase());
     } else if (token === '(') {
       operators.push(token);
     } else if (token === ')') {
