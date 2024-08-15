@@ -1,12 +1,5 @@
-# Rule Engine with AST
-Objective:
- Develop a simple 3-tier rule engine application(Simple UI, API and Backend, Data) to determine
- user eligibility based on attributes like age, department, income, spend etc.The system can use
- Abstract Syntax Tree (AST) to represent conditional rules and allow for dynamic
- creation,combination, and modification of these rules.
-<br>
- <br>
-  <br>
+# Assignment-1
+
 ![image](https://github.com/user-attachments/assets/80ef4383-0f69-4b75-8ef4-453bfa32666d)
  <br>
   <br>
@@ -21,6 +14,11 @@ Objective:
   <br>
 ## Evaluate Rule
 ![image](https://github.com/user-attachments/assets/45fb52c8-4f37-463a-9fa9-13463ca27d1d)
+ <br>
+  <br>
+
+## Database Storage
+![image](https://github.com/user-attachments/assets/595b678f-957b-4f8c-9b30-ab0b8879b092)
  <br>
   <br>
 
